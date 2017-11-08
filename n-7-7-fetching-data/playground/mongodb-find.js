@@ -23,16 +23,17 @@ MongoClient.connect('mongodb://localhost:27017/todoapp', (err, db) => {
   });
 
   //test 2.
-  // db.collection('todos').find().count().then((count) => {
-  //   console.log(`Todos count: ${count}`);
-  // }, (err) => {
-  //   console.log('Unable to fetch todos', err);
-  // });
+  //計算共幾筆資料
+  db.collection('todos').find().count().then((count) => {
+    console.log(`Todos count: ${count}`);
+  }, (err) => {
+    console.log('Unable to fetch todos', err);
+  });
 
   //test 3.
-  // db.collection('todos').find({name: 'Andrew'}).toArray().then((docs) => {
-  //   console.log(JSON.stringify(docs, undefined, 2));
-  // });
+  db.collection('todos').find({name: 'Andrew'}).toArray().then((docs) => {
+    console.log(JSON.stringify(docs, undefined, 2));
+  });
 
   // db.close();
 });

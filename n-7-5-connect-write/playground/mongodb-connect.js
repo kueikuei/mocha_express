@@ -16,7 +16,8 @@ MongoClient.connect('mongodb://localhost:27017/todo', (err, db) => {
     if (err) {
       return console.log('Unable to insert todo', err);
     }
-  
+    
+    // console.log(result.ops);
     console.log(JSON.stringify(result.ops, undefined, 2));
   });
 
